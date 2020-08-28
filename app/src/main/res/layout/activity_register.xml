@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context=".Register">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:text="Register"
+        android:textSize="36sp" />
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginTop="90dp"
+        android:ems="10"
+        android:hint="@string/email"
+        android:inputType="text"
+        android:textColorHint="#ffffff"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edittext_password"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:textSize="20sp" />
+
+    <EditText
+        android:id="@+id/edittext_cfpassword"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:hint="@string/cfpassword"
+        android:inputType="textPassword"
+        android:textColorHint="#ffffff"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/button_register"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/round_button"
+        android:text="@string/register"
+        android:textSize="22sp" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="@string/already_registered"
+            android:textSize="24dp" />
+
+        <TextView
+            android:id="@+id/textview_login"
+            android:layout_width="wrap_content"
+            android:layout_height="35dp"
+            android:text="@string/login"
+            android:paddingLeft="10dp"
+            android:textStyle="bold"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+</LinearLayout>
