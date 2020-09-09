@@ -26,5 +26,10 @@
     <string name="menu_tenderstatus">Tender Status</string>
     <string name="menu_logout">Logout</string>
     <string name="menu_settings">Settings</string>
+    <string name="logout">Logout</string>
+    <string name="settings">Settings</string>
+    <string name="tender_status">Tender Status</string>
+    <string name="add_tender">Add Tender</string>
+    <string name="settings">Settings</string>
 
 </resources>
