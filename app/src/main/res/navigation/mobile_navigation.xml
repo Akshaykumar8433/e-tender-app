@@ -8,18 +8,28 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.tender.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="@string/menu_addtender"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.tender.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:name="com.tender.ui.tenderstatus.GalleryFragment"
+        android:label="@string/menu_tenderstatus"
+        tools:layout="@layout/fragment_tenderstatus" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.tender.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_settings"
+        android:name="com.tender.ui.settings.SettingsFragment"
+        android:label="@string/menu_settings"
+        tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.tender.ui.logout.LogoutFragment"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

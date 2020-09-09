@@ -1,12 +1,14 @@
 <resources>
     <string name="app_name">My Application</string>
+    <string name="name">Username</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
-    <string name="not_registered">Not Registered?</string>
-    <string name="register">Register</string>
-    <string name="login">Login</string>
+    <string name="not_registered">Not registered yet?</string>
+    <string name="register">REGISTER </string>
+    <string name="registernow">Register Now</string>
+    <string name="Signin">SIGN IN</string>
     <string name="cfpassword">Conform Password</string>
-    <string name="already_registered">AlReady Registered?</string>
+    <string name="already_registered">Already Registered?</string>
     <string name="add_title">Add Title</string>
     <string name="description">Description</string>
     <string name="select_file">Select File</string>
@@ -14,12 +16,15 @@
     <string name="title_activity_home">home</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="username">Username</string>>
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_addtender">Add Tender</string>
+    <string name="menu_tenderstatus">Tender Status</string>
+    <string name="menu_logout">Logout</string>
+    <string name="menu_settings">Settings</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package com.tender.ui.gallery;
+package com.tender.ui.tenderstatus;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

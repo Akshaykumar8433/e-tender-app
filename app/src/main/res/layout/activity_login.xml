@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
+    android:background="@color/colorAccent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     tools:context=".Login">
@@ -13,7 +13,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
-        android:text="Login"
+        android:baselineAligned="false"
+        android:text="@string/Signin"
         android:textSize="36sp" />
 
     <EditText
@@ -21,9 +22,10 @@
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_marginTop="100dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/email"
-        android:inputType="text"
+        android:inputType="textWebEmailAddress|text"
         android:textColorHint="#ffffff"
         android:textSize="20sp" />
 
@@ -32,6 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="65dp"
         android:layout_marginTop="20dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -44,28 +47,33 @@
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/round_button"
-        android:text="@string/login"
+        android:text="@string/Signin"
         android:textSize="22sp" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="35dp"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:text="@string/not_registered"
-            android:textSize="24dp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textview_register"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
-            android:text="@string/register"
-            android:paddingLeft="10dp"
+            android:paddingStart="10dp"
+            android:text="@string/registernow"
+            android:textSize="24sp"
             android:textStyle="bold"
-            android:textSize="24dp" />
+            tools:ignore="RtlSymmetry" />
 
     </LinearLayout>
+
+
+
 </LinearLayout>

@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class Register extends AppCompatActivity {
+    EditText mUsername;
     EditText mEmail;
     EditText mPassword;
     EditText mcfPassword;
@@ -21,6 +22,7 @@ public class Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        mUsername = (EditText) findViewById(R.id.edittext_Username);
         mEmail = (EditText) findViewById(R.id.edittext_email);
         mPassword = (EditText) findViewById(R.id.edittext_password);
         mcfPassword = (EditText) findViewById(R.id.edittext_cfpassword);
