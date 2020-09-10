@@ -1,9 +1,13 @@
 package com.tender;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -19,6 +23,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class HomeActivity extends AppCompatActivity {
+
+
+    private ImageView mimageView;
+    private static final int REQUEST_IMAGE_CAPTURE = 101;
+
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -41,7 +50,7 @@ public class HomeActivity extends AppCompatActivity {
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+                R.id.nav_home, R.id.nav_gallery, R.id.nav_logout)
                 .setDrawerLayout(drawer)
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
@@ -55,7 +64,31 @@ public class HomeActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(),"Test Code",Toast.LENGTH_LONG).show();
 //            }
 //        });
+        mimageView = findViewById(R.id.imageView);
     }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
+            Bundle extras = data.getExtras();
+            Bitmap imageBitmap = (Bitmap) extras.get("data");
+            mimageView.setImageBitmap(imageBitmap);
+        }
+    }
+
+    public void takePicture(View view)
+    {
+        Intent imageTakeIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+
+        if (imageTakeIntent.resolveActivity(getPackageManager()) !=null)
+        {
+            startActivityForResult(imageTakeIntent, REQUEST_IMAGE_CAPTURE);
+        }
+    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -70,4 +103,6 @@ public class HomeActivity extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+
 }
