@@ -32,5 +32,13 @@ public class Login extends AppCompatActivity {
                 startActivity(registerIntent);
             }
         });
+
+        mLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent homeIntent = new Intent(Login.this, HomeActivity.class);
+                startActivity(homeIntent);
+            }
+        });
     }
 }
