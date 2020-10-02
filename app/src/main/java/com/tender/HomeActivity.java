@@ -21,6 +21,13 @@ import androidx.navigation.ui.NavigationUI;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.MapView;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -30,6 +37,15 @@ public class HomeActivity extends AppCompatActivity {
 
 
     private AppBarConfiguration mAppBarConfiguration;
+
+
+    private MapView mMapView;
+
+    private static final String MAPVIEW_BUNDLE_KEY = "MapViewBundleKey";
+
+    RecyclerView recyclerView;
+    FloatingActionButton add_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +80,7 @@ public class HomeActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(),"Test Code",Toast.LENGTH_LONG).show();
 //            }
 //        });
+
         mimageView = findViewById(R.id.imageView);
     }
 
