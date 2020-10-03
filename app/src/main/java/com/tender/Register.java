@@ -18,7 +18,7 @@ public class Register extends AppCompatActivity {
     EditText mcfPassword;
     Button mRegister;
     TextView mLogin;
-    MyDatabaseHelper myDatabaseHelper;
+    MyDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +32,7 @@ public class Register extends AppCompatActivity {
         mRegister = (Button) findViewById(R.id.button_register);
         mLogin = (TextView) findViewById(R.id.textview_login);
 
-        myDatabaseHelper = new MyDatabaseHelper(this);
+        db = new MyDatabaseHelper(this);
 
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,21 +43,27 @@ public class Register extends AppCompatActivity {
                 String passwordValue = mPassword.getText().toString();
                 String password1Value = mcfPassword.getText().toString();
 
-                if (usernameValue.length() > 1){
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("username",usernameValue);
-                    contentValues.put("email",emailValue);
-                    contentValues.put("password",passwordValue);
-                    contentValues.put("password1",password1Value);
-
-                    myDatabaseHelper.insertUser(contentValues);
-                    Toast.makeText(Register.this, "User Registered", Toast.LENGTH_SHORT).show();
-
+                if (usernameValue.equals("")||emailValue.equals("")||passwordValue.equals("")||password1Value.equals("")){
+                    Toast.makeText(Register.this, "Fields are empty", Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    Toast.makeText(Register.this, "Enter the values", Toast.LENGTH_SHORT).show();
-
+                    if(passwordValue.equals(password1Value)){
+                        Boolean checkemail = db.checkemail(emailValue);
+                        if (checkemail==true){
+                            Boolean insert = db.insert(usernameValue,emailValue,passwordValue);
+                            if(insert==true){
+                                Toast.makeText(getApplicationContext(),"Register Successful",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(),"Email already exists",Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                    else {
+                        Toast.makeText(getApplicationContext(), "Password does not match", Toast.LENGTH_SHORT).show();
+                    }
                 }
+
 
 
             }

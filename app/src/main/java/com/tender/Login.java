@@ -15,7 +15,7 @@ public class Login extends AppCompatActivity {
     EditText mPassword;
     Button mLogin;
     TextView mRegister;
-    MyDatabaseHelper mydatabaseHelper;
+    MyDatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,8 @@ public class Login extends AppCompatActivity {
         mPassword = (EditText) findViewById(R.id.edittext_password);
         mLogin = (Button) findViewById(R.id.button_login);
         mRegister = (TextView) findViewById(R.id.textview_register);
-        mydatabaseHelper = new MyDatabaseHelper(this);
+        db = new MyDatabaseHelper(this);
+
 
         mRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,15 +42,15 @@ public class Login extends AppCompatActivity {
             public void onClick(View view) {
                 String emailValue = mEmail.getText().toString();
                 String passwordValue = mPassword.getText().toString();
-
-                if (mydatabaseHelper.isLoginValid(emailValue, passwordValue)) {
+                Boolean Checkemailpass = db.emailpassword(emailValue,passwordValue);
+                if(Checkemailpass==true){
+                    Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     Intent homeIntent = new Intent(Login.this, HomeActivity.class);
                     startActivity(homeIntent);
-                    Toast.makeText(Login.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 }
-                else {
-                    Toast.makeText(Login.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
 
+                else {
+                    Toast.makeText(Login.this, "Wrong email or password", Toast.LENGTH_SHORT).show();
                 }
             }
         });
